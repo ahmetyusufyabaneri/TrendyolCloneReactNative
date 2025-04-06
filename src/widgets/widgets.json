@@ -1,16 +1,25 @@
 [
   {
     "id": 1,
+    "name": "categories",
     "title": "Categories",
     "seeAll": false
   },
   {
     "id": 2,
+    "name": "introduction",
+    "title": "Introduction",
+    "seeAll": false
+  },
+  {
+    "id": 3,
+    "name": "bestSellers",
     "title": "Best Sellers",
     "seeAll": true
   },
   {
-    "id": 3,
+    "id": 4,
+    "name": "forYou",
     "title": "For You",
     "seeAll": true
   }

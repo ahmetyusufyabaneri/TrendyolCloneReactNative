@@ -6,8 +6,8 @@ import Favourites from '../screens/Favourites';
 import Cart from '../screens/Cart';
 import Profile from '../screens/Profile';
 import TabIcon from '../components/TabIcon';
-import {colors} from '../themes/Colors';
-import {Pressable, Text, View} from 'react-native';
+import {colors} from '../themes/colors';
+import {Pressable, View} from 'react-native';
 import {Sms, NotificationBing} from 'iconsax-react-native';
 import {useNavigation} from '@react-navigation/native';
 
@@ -34,8 +34,9 @@ const TabNavigator = () => {
             style={{
               flexDirection: 'row',
               alignItems: 'center',
-              columnGap: 12,
+              columnGap: 20,
               marginRight: 12,
+              marginBottom: 4,
             }}>
             <Pressable
               onPress={() => navigation.navigate(screenNames.Notifications)}>

@@ -1,19 +1,17 @@
-import {StyleSheet, Text, View} from 'react-native';
-import {colors} from '../themes/Colors';
+import {FlatList, View} from 'react-native';
+import widgets from '../widgets/widgets.json';
+import Widget from '../widgets/Widget';
+import {screenStyle} from '../styles';
 
 const Home = () => {
   return (
-    <View style={styles.container}>
-      <Text>Home</Text>
+    <View style={screenStyle.container}>
+      <FlatList
+        data={widgets}
+        renderItem={({item}) => <Widget item={item} />}
+      />
     </View>
   );
 };
 
 export default Home;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.white,
-  },
-});
