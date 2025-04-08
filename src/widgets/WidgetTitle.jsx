@@ -1,12 +1,17 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {colors} from '../themes/colors';
+import {useNavigation} from '@react-navigation/native';
+import {screenNames} from '../types/screenNames';
 
 const WidgetTitle = ({title, seeAll}) => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
       {seeAll && (
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate(screenNames.Products)}>
           <Text style={styles.seeAll}>See All</Text>
         </TouchableOpacity>
       )}
