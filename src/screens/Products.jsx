@@ -43,6 +43,7 @@ const Products = () => {
         <FlatList
           data={products}
           renderItem={({item}) => <ProductItem data={item} />}
+          numColumns={2}
         />
       )}
     </View>
