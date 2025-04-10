@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {Text, View} from 'react-native';
 
 const ProductDetail = () => {
   return (
@@ -9,5 +9,3 @@ const ProductDetail = () => {
 };
 
 export default ProductDetail;
-
-const styles = StyleSheet.create({});
