@@ -4,7 +4,8 @@ import {getRequest} from '../../services/requests';
 export const getProducts = createAsyncThunk(
   'products/getProducts',
   async params => {
-    const response = await getRequest('/products', params);
+    const URL = params ? `/products/category/${params}` : '/products';
+    const response = await getRequest(URL, params);
     return response.data;
   },
 );

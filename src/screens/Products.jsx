@@ -16,9 +16,12 @@ const Products = () => {
     state => state.rootReducer.product,
   );
 
+  const {selectedCategory} = useSelector(state => state.rootReducer.category);
+  console.log(selectedCategory);
+
   useEffect(() => {
-    dispatch(getProducts());
-  }, []);
+    dispatch(getProducts(selectedCategory));
+  }, [selectedCategory]);
 
   return (
     <View style={screenStyle.container}>
