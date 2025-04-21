@@ -1,9 +1,8 @@
 import {Text, StyleSheet, TouchableOpacity} from 'react-native';
-import {upperCase} from '../utils';
 import {useDispatch, useSelector} from 'react-redux';
-
 import {setSelectedCategory} from '../app/slices/categorySlice';
 import {colors} from '../themes/colors';
+import {capitalizeLetter} from '../utils/capitalizeLetter';
 
 const CategoryItem = ({category}) => {
   const dispatch = useDispatch();
@@ -26,7 +25,7 @@ const CategoryItem = ({category}) => {
           styles.title,
           selectedCategory === category && styles.activeTitle,
         ]}>
-        {upperCase(category)}
+        {capitalizeLetter(category)}
       </Text>
     </TouchableOpacity>
   );

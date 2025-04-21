@@ -9,6 +9,7 @@ const Home = () => {
       <FlatList
         data={widgets}
         renderItem={({item}) => <Widget item={item} />}
+        showsVerticalScrollIndicator={false}
       />
     </View>
   );

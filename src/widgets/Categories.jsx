@@ -1,4 +1,4 @@
-import {FlatList, Text, View} from 'react-native';
+import {FlatList, View} from 'react-native';
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {getCategories} from '../app/actions/categoryAction';
@@ -8,11 +8,7 @@ import CategoryItem from '../components/CategoryItem';
 const Categories = () => {
   const dispatch = useDispatch();
 
-  const {categories, selectedCategory, isLoading, isError} = useSelector(
-    state => state.rootReducer.category,
-  );
-
-  console.log(categories, isError, isLoading);
+  const {categories} = useSelector(state => state.rootReducer.category);
 
   useEffect(() => {
     dispatch(getCategories());

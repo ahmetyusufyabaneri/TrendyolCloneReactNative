@@ -1,10 +1,13 @@
-import {FlatList, Text, View} from 'react-native';
+import {FlatList, View} from 'react-native';
 import {screenStyle} from '../styles';
 import {useDispatch, useSelector} from 'react-redux';
 import {useEffect} from 'react';
 import {getProducts} from '../app/actions/productAction';
 import ProductItem from '../components/ProductItem';
 import Spinner from '../components/Spinner';
+import Error from '../components/Error';
+import Categories from '../widgets/Categories';
+import {screenHeight} from '../constants';
 
 const Products = () => {
   const dispatch = useDispatch();
@@ -22,18 +25,16 @@ const Products = () => {
       {isLoading ? (
         <Spinner />
       ) : isError ? (
-        <View
-          style={{
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
-          <Text style={{fontSize: 18}}>{isError}</Text>
-        </View>
+        <Error isError={isError} />
       ) : (
         <FlatList
           data={products}
           renderItem={({item}) => <ProductItem data={item} />}
+          ListHeaderComponent={<Categories />}
+          ListHeaderComponentStyle={{
+            maxHeight: screenHeight * 0.09,
+          }}
+          showsVerticalScrollIndicator={false}
           numColumns={2}
           contentContainerStyle={{
             alignItems: 'center',

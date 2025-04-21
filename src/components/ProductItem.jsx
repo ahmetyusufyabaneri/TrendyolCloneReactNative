@@ -2,7 +2,7 @@ import {View, Text, Pressable, Image, StyleSheet} from 'react-native';
 import {screenHeight, screenWidth} from '../constants';
 import {colors} from '../themes/colors';
 import {Heart, Star} from 'iconsax-react-native';
-import {convertPrice} from '../utils';
+import {convertPrice} from '../utils/convertPrice';
 
 const ProductItem = ({data}) => {
   return (
