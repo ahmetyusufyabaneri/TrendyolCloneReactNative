@@ -1,10 +1,8 @@
 import {View, Image} from 'react-native';
-import WidgetTitle from './WidgetTitle';
 
-const Introduction = ({item}) => {
+const Introduction = () => {
   return (
     <View>
-      <WidgetTitle title={item.title} seeAll={item.seeAll} />
       <View
         style={{
           justifyContent: 'center',

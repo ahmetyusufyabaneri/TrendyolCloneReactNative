@@ -1,10 +1,10 @@
-import {ActivityIndicator, FlatList, Text, View} from 'react-native';
+import {FlatList, Text, View} from 'react-native';
 import {screenStyle} from '../styles';
 import {useDispatch, useSelector} from 'react-redux';
 import {useEffect} from 'react';
 import {getProducts} from '../app/actions/productAction';
-import {colors} from '../themes/colors';
 import ProductItem from '../components/ProductItem';
+import Spinner from '../components/Spinner';
 
 const Products = () => {
   const dispatch = useDispatch();
@@ -13,8 +13,6 @@ const Products = () => {
     state => state.rootReducer.product,
   );
 
-  console.log(products, isLoading, isError);
-
   useEffect(() => {
     dispatch(getProducts());
   }, []);
@@ -22,14 +20,7 @@ const Products = () => {
   return (
     <View style={screenStyle.container}>
       {isLoading ? (
-        <View
-          style={{
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
-          <ActivityIndicator size={'large'} color={colors.gray} />
-        </View>
+        <Spinner />
       ) : isError ? (
         <View
           style={{
@@ -44,6 +35,10 @@ const Products = () => {
           data={products}
           renderItem={({item}) => <ProductItem data={item} />}
           numColumns={2}
+          contentContainerStyle={{
+            alignItems: 'center',
+            marginTop: 8,
+          }}
         />
       )}
     </View>

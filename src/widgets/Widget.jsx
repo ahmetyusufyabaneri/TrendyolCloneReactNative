@@ -6,10 +6,10 @@ import Introduction from './Introduction';
 const Widget = ({item}) => {
   switch (item.name) {
     case 'categories':
-      return <Categories item={item} />;
+      return <Categories />;
 
     case 'introduction':
-      return <Introduction item={item} />;
+      return <Introduction />;
 
     case 'bestSellers':
       return <BestSellers item={item} />;

@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {Text, View} from 'react-native';
 
 const Favourites = () => {
   return (
@@ -9,5 +9,3 @@ const Favourites = () => {
 };
 
 export default Favourites;
-
-const styles = StyleSheet.create({});
