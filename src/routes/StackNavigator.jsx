@@ -25,6 +25,9 @@ const StackNavigator = () => {
       <Stack.Screen
         name={screenNames.ProductDetail}
         component={ProductDetail}
+        options={{
+          headerTitle: 'Product Detail',
+        }}
       />
       <Stack.Screen
         name={screenNames.Notifications}

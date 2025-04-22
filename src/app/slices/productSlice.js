@@ -2,7 +2,7 @@ import {createSlice} from '@reduxjs/toolkit';
 import {getProducts} from '../actions/productAction';
 
 const initialState = {
-  products: {},
+  products: [],
   isLoading: false,
   isError: null,
 };

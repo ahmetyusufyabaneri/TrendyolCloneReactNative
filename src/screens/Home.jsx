@@ -1,5 +1,5 @@
 import {FlatList, View} from 'react-native';
-import widgets from '../widgets/widgets.json';
+import widgets from '../widgets/json/widgets.json';
 import Widget from '../widgets/Widget';
 import {screenStyle} from '../styles';
 

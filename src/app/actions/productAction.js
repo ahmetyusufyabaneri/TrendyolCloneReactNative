@@ -9,3 +9,12 @@ export const getProducts = createAsyncThunk(
     return response.data;
   },
 );
+
+export const getProductDetail = createAsyncThunk(
+  'products/getProductDetail',
+  async params => {
+    const URL = `/products/${params}`;
+    const response = await getRequest(URL, params);
+    return response.data;
+  },
+);

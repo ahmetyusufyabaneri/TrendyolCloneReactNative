@@ -17,7 +17,6 @@ const Products = () => {
   );
 
   const {selectedCategory} = useSelector(state => state.rootReducer.category);
-  console.log(selectedCategory);
 
   useEffect(() => {
     dispatch(getProducts(selectedCategory));

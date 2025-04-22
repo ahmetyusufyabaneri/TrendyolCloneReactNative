@@ -1,9 +1,14 @@
-import {View, Image} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import {View, Image, Pressable} from 'react-native';
+import {screenNames} from '../types/screenNames';
 
 const Introduction = () => {
+  const navigation = useNavigation();
+
   return (
     <View>
-      <View
+      <Pressable
+        onPress={() => navigation.navigate(screenNames.Products)}
         style={{
           justifyContent: 'center',
           alignItems: 'center',
@@ -14,7 +19,7 @@ const Introduction = () => {
           }}
           style={{width: 400, height: 200, resizeMode: 'contain'}}
         />
-      </View>
+      </Pressable>
     </View>
   );
 };

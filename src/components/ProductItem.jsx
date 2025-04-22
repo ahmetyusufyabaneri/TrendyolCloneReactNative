@@ -3,10 +3,18 @@ import {screenHeight, screenWidth} from '../constants';
 import {colors} from '../themes/colors';
 import {Heart, Star} from 'iconsax-react-native';
 import {convertPrice} from '../utils/convertPrice';
+import {useNavigation} from '@react-navigation/native';
+import {screenNames} from '../types/screenNames';
 
 const ProductItem = ({data}) => {
+  const navigation = useNavigation();
+
   return (
-    <Pressable style={styles.container}>
+    <Pressable
+      onPress={() =>
+        navigation.navigate(screenNames.ProductDetail, {id: data.id})
+      }
+      style={styles.container}>
       <Image
         source={{uri: data.image}}
         style={{
