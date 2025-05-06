@@ -42,7 +42,7 @@ const ProductDetail = () => {
           <Error />
         ) : (
           <View style={{flex: 1}}>
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
               <Image source={{uri: product?.image}} style={styles.image} />
               <Text style={styles.title}>{product?.title}</Text>
               <View style={styles.categoryContainer}>

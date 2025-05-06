@@ -1,13 +1,13 @@
-import {Pressable, StyleSheet, Text} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {colors} from '../themes/colors';
 
 const Button = ({isFill, title}) => {
   return (
-    <Pressable style={!isFill ? styles.button : styles.fillButton}>
+    <TouchableOpacity style={!isFill ? styles.button : styles.fillButton}>
       <Text style={!isFill ? styles.title : styles.fillButtonTitle}>
         {title}
       </Text>
-    </Pressable>
+    </TouchableOpacity>
   );
 };
 
